@@ -1,9 +1,6 @@
-import React from "react";
 import styled from "styled-components";
-import { FaBars } from "react-icons/fa";
-import avatar5 from "../../Assets/Img/avatar5.png";
 
-const LogoContainer = styled.a`
+export const LogoContainer = styled.a`
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 300;
   background-color: #367fa9;
@@ -25,14 +22,14 @@ const LogoContainer = styled.a`
     float: none;
   }
 `;
-const LogoMini = styled.span`
+export const LogoMini = styled.span`
   display: none;
   font-size: 14px;
   font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-weight: 400;
 `;
 
-const LogoLg = styled.span`
+export const LogoLg = styled.span`
   display: block;
   font-size: 18px;
   font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -44,7 +41,7 @@ const LogoLg = styled.span`
   }
 `;
 
-const HeaderContainer = styled.header`
+export const HeaderContainer = styled.header`
   background-color: #3c8dbc;
   color: white;
   padding: 3px 15px;
@@ -54,18 +51,17 @@ const HeaderContainer = styled.header`
   position: relative;
 
   @media (max-width: 768px) {
-      width: 100%;
-      float: none;
-    }
+    width: 100%;
+    float: none;
   }
 `;
 
-const LeftContainer = styled.div`
+export const LeftContainer = styled.div`
   display: flex;
   align-items: center;
 `;
 
-const MenuIcon = styled.div`
+export const MenuIcon = styled.div`
   font-size: 17px;
   cursor: pointer;
   &:hover {
@@ -74,7 +70,7 @@ const MenuIcon = styled.div`
   }
 `;
 
-const UserInfo = styled.div`
+export const UserInfo = styled.div`
   display: flex;
   align-items: center;
   cursor: pointer;
@@ -84,7 +80,7 @@ const UserInfo = styled.div`
   }
 `;
 
-const UserAvatar = styled.img`
+export const UserAvatar = styled.img`
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -101,7 +97,7 @@ const UserAvatar = styled.img`
   }
 `;
 
-const UserName = styled.span`
+export const UserName = styled.span`
   font-size: 16px;
   font-weight: bold;
   font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -111,29 +107,3 @@ const UserName = styled.span`
     display: none;
   }
 `;
-
-const Header = () => {
-  return (
-    <>
-      <LogoContainer href="/" className="logolt">
-        <LogoMini>HCODE</LogoMini>
-        <LogoLg>HCODE</LogoLg>
-      </LogoContainer>
-
-      <HeaderContainer>
-        <LeftContainer>
-          <MenuIcon>
-            <FaBars />
-          </MenuIcon>
-        </LeftContainer>
-
-        <UserInfo>
-          <UserAvatar src={avatar5} alt="Usuário" />
-          <UserName>Carlos Junior</UserName>
-        </UserInfo>
-      </HeaderContainer>
-    </>
-  );
-};
-
-export default Header;

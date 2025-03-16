@@ -1,8 +1,6 @@
-import React from "react";
 import styled from "styled-components";
-import { FaHome } from "react-icons/fa";
 
-const ContentHeader = styled.header`
+export const ContentHeader = styled.header`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -18,13 +16,13 @@ const ContentHeader = styled.header`
   }
 `;
 
-const HeaderTop = styled.nav`
+export const HeaderTop = styled.nav`
   display: flex;
   align-items: center;
   flex-direction: row;
 `;
 
-const Title = styled.h1`
+export const Title = styled.h1`
   font-family: "Source Sans Pro", sans-serif;
   font-size: 24px;
   font-weight: 500;
@@ -39,7 +37,7 @@ const Title = styled.h1`
   }
 `;
 
-const Subtitle = styled.p`
+export const Subtitle = styled.p`
   font-family: "Source Sans Pro", sans-serif;
   font-size: 15px;
   font-weight: 300;
@@ -47,7 +45,7 @@ const Subtitle = styled.p`
   margin: 0;
 `;
 
-const BreadcrumbContainer = styled.nav`
+export const BreadcrumbContainer = styled.nav`
   display: flex;
   align-items: center;
   font-size: 14px;
@@ -69,7 +67,7 @@ const BreadcrumbContainer = styled.nav`
   }
 `;
 
-const BreadcrumbItem = styled.span`
+export const BreadcrumbItem = styled.span`
   display: flex;
   align-items: center;
 
@@ -101,24 +99,3 @@ const BreadcrumbItem = styled.span`
     }
   }
 `;
-
-const UsersHeader = () => {
-  return (
-    <ContentHeader>
-      <HeaderTop>
-        <Title>Usuários</Title>
-        <Subtitle>Gerenciamento de usuários do sistema</Subtitle>
-      </HeaderTop>
-      <BreadcrumbContainer>
-        <BreadcrumbItem>
-          <a href="/">
-            <FaHome /> Home
-          </a>
-        </BreadcrumbItem>
-        <BreadcrumbItem>Usuários</BreadcrumbItem>
-      </BreadcrumbContainer>
-    </ContentHeader>
-  );
-};
-
-export default UsersHeader;

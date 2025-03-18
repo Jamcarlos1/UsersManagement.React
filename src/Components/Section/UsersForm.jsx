@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { FaUserPlus, FaChartPie } from "react-icons/fa";
 import defaultAvatar from "../../Assets/Img/avatar5.png";
 import { useRef } from "react";
-
 import {
   Container,
   TableContainer,
@@ -90,12 +89,15 @@ const UsersForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    let lastId = Number(localStorage.getItem("lastUserId")) || 0;
     let updatedUsers;
     if (editingIndex !== null) {
       updatedUsers = users.map((user, index) =>
         index === editingIndex
           ? {
               ...formData,
+              id: user.id,
               createdAt: user.createdAt,
               updatedAt: new Date().toISOString(),
             }
@@ -103,7 +105,9 @@ const UsersForm = () => {
       );
       setEditingIndex(null);
     } else {
-      updatedUsers = [...users, formData];
+      const newId = lastId + 1;
+      updatedUsers = [...users, { ...formData, id: newId }];
+      localStorage.setItem("lastUserId", newId);
     }
     setUsers(updatedUsers);
     localStorage.setItem("users", JSON.stringify(updatedUsers));
@@ -114,7 +118,6 @@ const UsersForm = () => {
       country: "",
       email: "",
       password: "",
-      photo: "",
       admin: false,
       createdAt: new Date().toISOString(),
       updatedAt: null,

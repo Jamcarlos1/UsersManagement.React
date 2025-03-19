@@ -1,7 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { FaUserPlus, FaChartPie } from "react-icons/fa";
 import defaultAvatar from "../../Assets/Img/avatar5.png";
-import { useRef } from "react";
 import {
   Container,
   TableContainer,
